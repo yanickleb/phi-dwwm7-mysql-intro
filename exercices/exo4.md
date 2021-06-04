@@ -20,6 +20,8 @@ Remarque : on crée une entité si l'on doit en gérer **plusieurs**
 - Utilisateur - Compte (créer)
 - Compte - Carte (associer)
 
+ATTENTION : la relation Utilisateur-Carte (posséder) a été en doublon
+
 # 4. Quelles sont les cardinalités ?
 
 - Utilisateur - Compte (créer, n-n)
