@@ -37,42 +37,42 @@ ATTENTION : la relation Utilisateur-Carte (posséder) a été en doublon
 # 5. Quelles sont les clés primaires et étrangères ?
 
 Table : Utilisateur
-    - id (PK)
+- id (PK)
 
 Table : Compte
-    - id (PK)
+- id (PK)
 
 Table : Carte
-    - id (PK)
-    - compte_id (FK)
+- id (PK)
+- compte_id (FK)
 
 Table : utilisateur_compte
-    - utilisateur_id (FK)
-    - compte_id (FK)
+- utilisateur_id (FK)
+- compte_id (FK)
 
 # 6. Quels sont les attributs ?
 
 Table : Utilisateur
-    - id (PK)
-    - nom
-    - adresse
-    - identifiant
-    - mot_de_passe
+- id (PK)
+- nom
+- adresse
+- identifiant
+- mot_de_passe
 
 Table : Compte
-    - id (PK)
-    - iban
+- id (PK)
+- iban
 
 Table : Carte
-    - id (PK)
-    - compte_id (FK)
-    - numero
-    - code_pin
-    - CVC
-    - date_expiration
-    - type
+- id (PK)
+- compte_id (FK)
+- numero
+- code_pin
+- CVC
+- date_expiration
+- type
 
 Table : utilisateur_compte
-    - utilisateur_id (FK)
-    - compte_id (FK)
+- utilisateur_id (FK)
+- compte_id (FK)
 
