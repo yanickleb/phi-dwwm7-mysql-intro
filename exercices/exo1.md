@@ -68,4 +68,5 @@ On ne met pas cette relation : - clients - produits (acheter). car ell eest en d
 - Table : produits_commandes
     - produit_id (FK)
     - commande_id (FK)
+    - quantite
 
