@@ -128,6 +128,10 @@ SELECT * FROM exo1_orders ORDER BY created_at ASC LIMIT 1;
 SELECT name FROM exo1_products ORDER BY price DESC LIMIT 3;
 ```
 
+### Quelle sont les références des 2 commande les plus récentes ?
+
+### Quels sont les 2 produits les plus populaires (qui ont été commandés le plus de fois) ?
+
 # Requêtes avec JOIN
 
 ### Quelles sont toutes les informations des utilisateurs et des commandes ?
@@ -136,4 +140,74 @@ SELECT name FROM exo1_products ORDER BY price DESC LIMIT 3;
 SELECT * FROM 
 exo1_users u LEFT OUTER JOIN exo1_orders o
 ON o.user_id = u.id;
+```
+
+### Quel est l'adresse email de l'utilisateur ayant passé la commande 39820342 ?
+
+```sql
+SELECT exo1_users.email FROM
+exo1_users LEFT OUTER JOIN exo1_orders
+ON exo1_users.id = exo1_orders.user_id
+WHERE exo1_orders.reference = '39820342';
+```
+
+### Quel est le prenom de l'utilisateur ayant passé la commande 39820342 ?
+
+```sql
+SELECT exo1_users.firstname FROM
+exo1_users LEFT OUTER JOIN exo1_orders
+ON exo1_users.id = exo1_orders.user_id
+WHERE exo1_orders.reference = '39820342';
+```
+
+### Quels sont les numeros de produits commandés et la référence de la commande associée ?
+
+```sql
+SELECT exo1_order_details.product_id, exo1_orders.reference FROM
+exo1_order_details LEFT OUTER JOIN exo1_orders
+ON exo1_order_details.order_id = exo1_orders.id;
+```
+
+### Quels sont les noms des produits et leur quantité commandée ?
+
+```sql
+SELECT exo1_order_details.quantity, exo1_products.name FROM
+exo1_order_details LEFT OUTER JOIN exo1_products
+ON exo1_order_details.product_id = exo1_products.id;
+```
+
+### Quels sont les noms et les prix de produits commandés et la référence de la commande associée ?
+
+# BONUS
+
+### Filtrer sur l'année d'une date
+
+```sql
+SELECT * FROM exo2_donnees WHERE YEAR(jour) = '2020';
+```
+
+### Filtrer les doublons
+
+```sql
+SELECT DISTINCT(jour) FROM exo2_donnees;
+```
+
+### Filtrer en limitant le nombre
+
+```sql
+SELECT * FROM exo2_donnees LIMIT 3;
+```
+
+```sql
+SELECT * FROM exo2_donnees LIMIT 3 OFFSET 2;
+```
+
+```sql
+SELECT * FROM exo2_donnees LIMIT 2, 3;
+```
+
+### Faire des operations
+
+```sql
+SELECT SUM(hosp + rea + rad + dc) AS charge_hopital FROM exo2_donnees;
 ```
